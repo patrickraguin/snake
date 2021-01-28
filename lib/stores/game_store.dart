@@ -55,7 +55,10 @@ abstract class _GameStore with Store {
 
   @action
   void initGame() {
-    snake = ObservableList.of(Constants.initSnake);
+    snake = ObservableList.of([(Constants.side / 2).round()]);
+    for(int i=0; i<Constants.minSnake - 1; i++) {
+      snake.add(snake.last + Constants.side);
+    }
     food = ObservableList.of([]);
     _generateFood();
     timer?.cancel();
@@ -77,29 +80,29 @@ abstract class _GameStore with Store {
     switch (direction) {
       case Direction.left:
         indexCase = snake.last - 1;
-        if (snake.last % Constants.cols == 0) {
-          indexCase += Constants.cols;
+        if (snake.last % Constants.side == 0) {
+          indexCase += Constants.side;
         }
         break;
       case Direction.right:
         indexCase = snake.last + 1;
-        if (indexCase % Constants.cols == 0) {
-          indexCase -= Constants.cols;
+        if (indexCase % Constants.side == 0) {
+          indexCase -= Constants.side;
         }
         break;
       case Direction.top:
-        if (snake.last < Constants.cols) {
-          indexCase = Constants.cols * (Constants.rows - 1) + snake.last;
+        if (snake.last < Constants.side) {
+          indexCase = Constants.side * (Constants.side - 1) + snake.last;
         } else {
-          indexCase = snake.last - Constants.cols;
+          indexCase = snake.last - Constants.side;
         }
 
         break;
       case Direction.bottom:
-        if (snake.last > Constants.cols * (Constants.rows - 1)) {
-          indexCase = snake.last - Constants.cols * (Constants.rows - 1);
+        if (snake.last > Constants.side * (Constants.side - 1)) {
+          indexCase = snake.last - Constants.side * (Constants.side - 1);
         } else {
-          indexCase = snake.last + Constants.cols;
+          indexCase = snake.last + Constants.side;
         }
         break;
     }
@@ -138,7 +141,7 @@ abstract class _GameStore with Store {
 
   void _generateFood() {
     while(food.length < Constants.nbFood) {
-      int number = Random().nextInt(Constants.cols * Constants.rows);
+      int number = Random().nextInt(Constants.side * Constants.side);
       if(!food.contains(number) && !snake.contains(number))
         food.add(number);
     }

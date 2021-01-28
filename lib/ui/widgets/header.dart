@@ -10,7 +10,8 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     GameStore gameStore = Provider.of<GameStore>(context);
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+      height: 110,
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

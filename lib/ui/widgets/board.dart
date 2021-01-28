@@ -7,17 +7,25 @@ import 'package:snake/stores/game_store.dart';
 class Board extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    num height  = size.height - 140 - 110;
+    num width = size.width;
+    if(height < width) {
+      width = height - (Constants.side * 2.5);
+    }
     return Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
+        width: width,
+        height: height,
         child: GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 1,
-              crossAxisCount: 15,
-              mainAxisSpacing: 2,
-              crossAxisSpacing: 2),
-          itemBuilder: (BuildContext context, int index) => _displayCase(context, index),
-          itemCount: Constants.cols * Constants.rows,
+              crossAxisCount: Constants.side,
+              mainAxisSpacing: 0,
+              crossAxisSpacing: 0),
+          itemBuilder: (BuildContext context, int index) =>
+              _displayCase(context, index),
+          itemCount: Constants.side * Constants.side,
         ));
   }
 
@@ -26,18 +34,18 @@ class Board extends StatelessWidget {
     return Observer(
       builder: (context) => Container(
         decoration: BoxDecoration(
-            color: _getCaseColor(index, gameStore.snake, gameStore.food, gameStore.losing),
+            color: _getCaseColor(
+                index, gameStore.snake, gameStore.food, gameStore.losing),
             border: Border.all(color: Colors.grey, width: 0.3)),
         child: Text(
-          "",
-          style: TextStyle(fontSize: 10),
+          '',
+          style: TextStyle(fontSize: 6),
         ),
       ),
     );
   }
 
   Color _getCaseColor(int index, List<int> snake, List<int> food, bool losing) {
-
     if (snake.contains(index)) {
       if (losing) {
         return Constants.loseColor;

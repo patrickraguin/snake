@@ -12,7 +12,7 @@ class Bottom extends StatelessWidget {
   Widget build(BuildContext context) {
     GameStore gameStore = Provider.of<GameStore>(context);
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      height: 140,
       alignment: Alignment.center,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Row(
@@ -25,6 +25,7 @@ class Bottom extends StatelessWidget {
                   isActive: gameStore.direction == Direction.left),
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Observer(
                   builder: (context) => GameButton(
@@ -38,7 +39,8 @@ class Bottom extends StatelessWidget {
                 Observer(
                   builder: (context) => GameButton(
                       iconData: Icons.expand_more,
-                      onPressed: () => gameStore.changeDirection(Direction.bottom),
+                      onPressed: () =>
+                          gameStore.changeDirection(Direction.bottom),
                       isActive: gameStore.direction == Direction.bottom),
                 ),
               ],
