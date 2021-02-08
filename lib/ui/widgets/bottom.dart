@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:snake/entities/Direction.dart';
+import 'package:snake/entities/direction.dart';
 import 'package:snake/stores/game_store.dart';
 import 'package:snake/ui/widgets/play_button.dart';
 

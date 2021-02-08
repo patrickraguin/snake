@@ -3,7 +3,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:mobx/mobx.dart';
-import 'package:snake/entities/Direction.dart';
+import 'package:snake/entities/direction.dart';
 import 'package:snake/repositories/preferencies_repository.dart';
 
 import '../constants.dart';
