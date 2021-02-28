@@ -43,6 +43,7 @@ analyzer:
     - "lib/src/http/**"
     - "test_fixes/**"
     - "lib/stores/*.g.dart"
+    - "%LOCALAPPDATA%/**"
 linter:
   rules:
     # these rules are documented on and in the same order as

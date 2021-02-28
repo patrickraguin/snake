@@ -128,9 +128,20 @@ mixin _$GameStore on _GameStore, Store {
   }
 
   @override
+  void _updateScore(int value) {
+    final _$actionInfo = _$_GameStoreActionController.startAction(
+        name: '_GameStore._updateScore');
+    try {
+      return super._updateScore(value);
+    } finally {
+      _$_GameStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void initGame() {
     final _$actionInfo =
-        _$_GameStoreActionController.startAction(name: '_GameStore.init');
+        _$_GameStoreActionController.startAction(name: '_GameStore.initGame');
     try {
       return super.initGame();
     } finally {

@@ -16,7 +16,11 @@ abstract class _GameStore with Store {
 
   PreferenciesRepository preferenciesRepository;
 
-  _GameStore(this.preferenciesRepository);
+  _GameStore(this.preferenciesRepository) {
+    preferenciesRepository.loadScore().then((value) {
+      _updateScore(value);
+    });
+  }
 
 
 
@@ -49,8 +53,8 @@ abstract class _GameStore with Store {
   }
 
   @action
-  Future<void> initData() async {
-    bestScore = await preferenciesRepository.loadScore();
+  void _updateScore(int value) {
+    bestScore = value;
   }
 
   @action
