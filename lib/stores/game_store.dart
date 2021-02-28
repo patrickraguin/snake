@@ -17,7 +17,7 @@ abstract class _GameStore with Store {
   PreferenciesRepository preferenciesRepository;
 
   _GameStore(this.preferenciesRepository) {
-    preferenciesRepository.loadScore().then((value) {
+    preferenciesRepository.loadScore().then((int value) {
       _updateScore(value);
     });
   }

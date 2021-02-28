@@ -8,7 +8,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:snake/app.dart';
-import 'package:snake/main.dart' as snake;
 import 'package:snake/repositories/preferencies_repository.dart';
 import 'package:snake/stores/game_store.dart';
 
