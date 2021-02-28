@@ -55,11 +55,11 @@ abstract class _GameStore with Store {
 
   @action
   void initGame() {
-    snake = ObservableList.of([(Constants.side / 2).round()]);
+    snake = ObservableList<int>.of([(Constants.side / 2).round()]);
     for(int i=0; i<Constants.minSnake - 1; i++) {
       snake.add(snake.last + Constants.side);
     }
-    food = ObservableList.of([]);
+    food = ObservableList<int>.of([]);
     _generateFood();
     timer?.cancel();
     playing = false;

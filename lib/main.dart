@@ -6,13 +6,13 @@ import 'package:snake/repositories/preferencies_repository.dart';
 import 'package:snake/stores/game_store.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  PreferenciesRepository preferenciesRepository = PreferenciesRepository();
-  GameStore gameStore = GameStore(preferenciesRepository);
+  final PreferenciesRepository preferenciesRepository =
+      PreferenciesRepository();
+  final GameStore gameStore = GameStore(preferenciesRepository);
   await gameStore.initData();
-  runApp(Provider(
+  runApp(Provider<GameStore>(
     create: (_) => gameStore,
     child: App(),
   ));

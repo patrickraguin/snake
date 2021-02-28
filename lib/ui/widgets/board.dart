@@ -7,9 +7,9 @@ import 'package:snake/stores/game_store.dart';
 class Board extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    num height  = size.height - 140 - 110;
-    num width = size.width;
+    final Size size = MediaQuery.of(context).size;
+    final double height  = size.height - 140 - 110;
+    double width = size.width;
     if(height < width) {
       width = height - (Constants.side * 2.5);
     }
@@ -37,7 +37,7 @@ class Board extends StatelessWidget {
             color: _getCaseColor(
                 index, gameStore.snake, gameStore.food, gameStore.losing),
             border: Border.all(color: Colors.grey, width: 0.3)),
-        child: Text(
+        child: const Text(
           '',
           style: TextStyle(fontSize: 6),
         ),

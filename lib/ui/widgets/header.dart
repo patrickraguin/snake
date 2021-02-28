@@ -8,17 +8,17 @@ import 'game_info.dart';
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    GameStore gameStore = Provider.of<GameStore>(context);
+    final GameStore gameStore = Provider.of<GameStore>(context);
     return Container(
       height: 110,
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
+        children: <Widget>[
           Observer(
-              builder: (concext) => GameInfo('Score', gameStore.score)),
+              builder: (BuildContext concext) => GameInfo('Score', gameStore.score)),
           Observer(
-              builder: (concext) => GameInfo('Meilleur Score', gameStore.bestScore)),
+              builder: (BuildContext concext) => GameInfo('Meilleur Score', gameStore.bestScore)),
         ],
       ),
     );

@@ -20,8 +20,8 @@ class GameInfo extends StatelessWidget {
               fontSize: 14, fontWeight: FontWeight.w600, color: Constants.color),
         ),
         Container(
-          margin: EdgeInsets.only(top: 5),
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          margin: const EdgeInsets.only(top: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           width: 90,
           decoration: BoxDecoration(
             color: Constants.color,
@@ -32,7 +32,7 @@ class GameInfo extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.4),
                 spreadRadius: 0.1,
                 blurRadius: 30,
-                offset: Offset(0, 2), // changes position of shadow
+                offset: const Offset(0, 2), // changes position of shadow
               ),
             ],
           ),

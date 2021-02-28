@@ -33,7 +33,7 @@ class Bottom extends StatelessWidget {
                       onPressed: () => gameStore.changeDirection(Direction.top),
                       isActive: gameStore.direction == Direction.top),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Observer(

@@ -4,7 +4,7 @@ import 'package:snake/constants.dart';
 class GameButton extends StatelessWidget {
 
   final IconData iconData;
-  final Function onPressed;
+  final void Function() onPressed;
   final bool isActive;
 
   GameButton(
