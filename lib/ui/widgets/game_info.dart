@@ -13,21 +13,21 @@ class GameInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         Text(
           label.toUpperCase(),
           style: GoogleFonts.chakraPetch(
-              fontSize: 14, fontWeight: FontWeight.w600, color: Constants.color),
+              fontSize: 14, fontWeight: FontWeight.w600, color: defaultColor),
         ),
         Container(
           margin: const EdgeInsets.only(top: 5),
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           width: 90,
           decoration: BoxDecoration(
-            color: Constants.color,
+            color: defaultColor,
             borderRadius: BorderRadius.circular(10),
             shape: BoxShape.rectangle,
-            boxShadow: [
+            boxShadow: <BoxShadow>[
               BoxShadow(
                 color: Colors.grey.withOpacity(0.4),
                 spreadRadius: 0.1,

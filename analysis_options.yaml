@@ -42,6 +42,7 @@ analyzer:
     - "lib/i18n/messages_*.dart"
     - "lib/src/http/**"
     - "test_fixes/**"
+    - "lib/stores/*.g.dart"
 linter:
   rules:
     # these rules are documented on and in the same order as

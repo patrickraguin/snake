@@ -10,25 +10,26 @@ import 'game_button.dart';
 class Bottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    GameStore gameStore = Provider.of<GameStore>(context);
+    final GameStore gameStore = Provider.of<GameStore>(context);
     return Container(
       height: 140,
       alignment: Alignment.center,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: <
+          Widget>[
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Observer(
-              builder: (context) => GameButton(
+              builder: (BuildContext context) => GameButton(
                   iconData: Icons.chevron_left,
                   onPressed: () => gameStore.changeDirection(Direction.left),
                   isActive: gameStore.direction == Direction.left),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 Observer(
-                  builder: (context) => GameButton(
+                  builder: (BuildContext context) => GameButton(
                       iconData: Icons.expand_less,
                       onPressed: () => gameStore.changeDirection(Direction.top),
                       isActive: gameStore.direction == Direction.top),
@@ -37,7 +38,7 @@ class Bottom extends StatelessWidget {
                   height: 15,
                 ),
                 Observer(
-                  builder: (context) => GameButton(
+                  builder: (BuildContext context) => GameButton(
                       iconData: Icons.expand_more,
                       onPressed: () =>
                           gameStore.changeDirection(Direction.bottom),
@@ -46,7 +47,7 @@ class Bottom extends StatelessWidget {
               ],
             ),
             Observer(
-              builder: (context) => GameButton(
+              builder: (BuildContext context) => GameButton(
                   iconData: Icons.chevron_right,
                   onPressed: () => gameStore.changeDirection(Direction.right),
                   isActive: gameStore.direction == Direction.right),

@@ -13,7 +13,7 @@ class GameButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: isActive ? Constants.color : Colors.white,
+      backgroundColor: isActive ? defaultColor : Colors.white,
       radius: 28,
       child: IconButton(
         onPressed: onPressed,
@@ -21,7 +21,7 @@ class GameButton extends StatelessWidget {
         icon: Icon(iconData),
         splashRadius: 28,
         splashColor: Colors.black,
-        color: isActive ? Colors.white : Constants.color,
+        color: isActive ? Colors.white : defaultColor,
       ),
     );
   }
