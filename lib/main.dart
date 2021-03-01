@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:snake/app.dart';
-import 'package:snake/repositories/preferencies_repository.dart';
+import 'app.dart';
+import 'repositories/preferencies_repository.dart';
 import 'package:snake/stores/game_store.dart';
 
 Future<void> main() async {
