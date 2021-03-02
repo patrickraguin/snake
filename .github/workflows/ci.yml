@@ -32,7 +32,7 @@ jobs:
       # 2
       - uses: actions/download-artifact@master
         with:
-          name: release.apk
+          name: release-apk
       #3
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
