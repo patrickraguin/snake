@@ -23,10 +23,12 @@ jobs:
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
-      - uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
+      - name: upload artefact to App Center
+        uses: wzieba/AppCenter-Github-Action@v1
         with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          groups: testers
+          appName: wzieba/Sample-App
+          token: ${{secrets.APP_CENTER_TOKEN}}
+          group: Testers
           file: build/app/outputs/apk/release/app-release.apk
-          debug: true
+          notifyTesters: true
+          debug: false
