@@ -1,4 +1,4 @@
-# ci.yml
+# ci-android.yml
 name: CI
 
 on:
