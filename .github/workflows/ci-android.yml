@@ -1,5 +1,5 @@
 # ci-android.yml
-name: CI
+name: CI-android
 
 on:
   push:
