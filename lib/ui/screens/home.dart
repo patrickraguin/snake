@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:snake/stores/game_store.dart';
-import 'package:snake/ui/widgets/board.dart';
-import 'package:snake/ui/widgets/bottom.dart';
-import 'package:snake/ui/widgets/header.dart';
+import '../../stores/game_store.dart';
+import '../widgets/board.dart';
+import '../widgets/bottom.dart';
+import '../widgets/header.dart';
 
 class Home extends StatelessWidget {
+
+  Home({Key? key}): super(key: key);
 
   @override
   Widget build(BuildContext context) {

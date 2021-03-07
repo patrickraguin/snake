@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:snake/stores/game_store.dart';
+import '../../stores/game_store.dart';
 
 import 'game_info.dart';
 
 class Header extends StatelessWidget {
+
+  Header({Key? key}): super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final GameStore gameStore = Provider.of<GameStore>(context);

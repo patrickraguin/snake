@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'app.dart';
 import 'repositories/preferencies_repository.dart';
-import 'package:snake/stores/game_store.dart';
+import 'stores/game_store.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

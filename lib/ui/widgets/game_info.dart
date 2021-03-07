@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:snake/constants.dart';
+import '../../constants.dart';
 
 class GameInfo extends StatelessWidget {
 
+  GameInfo(this.label, this.value, {Key? key}): super(key: key);
+
   final String label;
   final int value;
-
-  GameInfo(this.label, this.value);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,6 @@ class GameInfo extends StatelessWidget {
           decoration: BoxDecoration(
             color: defaultColor,
             borderRadius: BorderRadius.circular(10),
-            shape: BoxShape.rectangle,
             boxShadow: <BoxShadow>[
               BoxShadow(
                 color: Colors.grey.withOpacity(0.4),

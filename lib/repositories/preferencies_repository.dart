@@ -11,9 +11,9 @@ class PreferenciesRepository {
 
   }
 
-  Future<int> loadScore() async {
+  Future<int> loadScore(int defaultValue) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(scoreKey) ?? 0;
+    return prefs.getInt(scoreKey) ?? defaultValue;
   }
 
 }

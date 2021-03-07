@@ -3,9 +3,9 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:mobx/mobx.dart';
-import 'package:snake/constants.dart';
-import 'package:snake/entities/direction.dart';
-import 'package:snake/repositories/preferencies_repository.dart';
+import '../constants.dart';
+import '../entities/direction.dart';
+import '../repositories/preferencies_repository.dart';
 
 
 part 'game_store.g.dart';
@@ -14,38 +14,34 @@ class GameStore = _GameStore with _$GameStore;
 
 abstract class _GameStore with Store {
 
-  PreferenciesRepository preferenciesRepository;
-
   _GameStore(this.preferenciesRepository) {
-    preferenciesRepository.loadScore().then((int value) {
-      _updateScore(value);
-    });
+    preferenciesRepository.loadScore(0).then(_updateScore);
   }
 
-
-
-  @observable
-  int score;
+  PreferenciesRepository preferenciesRepository;
 
   @observable
-  int bestScore;
+  int score = 0;
 
   @observable
-  ObservableList<int> snake;
+  int bestScore = 0;
 
   @observable
-  ObservableList<int> food;
+  ObservableList<int> snake = ObservableList();
 
   @observable
-  bool playing;
+  ObservableList<int> food = ObservableList();
 
   @observable
-  bool losing;
+  bool playing = false;
 
   @observable
-  Direction direction;
+  bool losing = false;
 
-  Timer timer;
+  @observable
+  Direction direction = Direction.bottom;
+
+  Timer? timer;
 
   @action
   void changeDirection(Direction newDirection) {
@@ -146,8 +142,9 @@ abstract class _GameStore with Store {
   void _generateFood() {
     while(food.length < defaultNbFood) {
       final int number = Random().nextInt(defaultSide * defaultSide);
-      if(!food.contains(number) && !snake.contains(number))
+      if(!food.contains(number) && !snake.contains(number)) {
         food.add(number);
+      }
     }
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:snake/constants.dart';
+import '../../constants.dart';
 
 class GameButton extends StatelessWidget {
+
+  GameButton(
+      {required this.iconData, required this.onPressed, this.isActive = false, Key? key}): super(key: key);
 
   final IconData iconData;
   final void Function() onPressed;
   final bool isActive;
-
-  GameButton(
-      {@required this.iconData, @required this.onPressed, this.isActive = false});
 
   @override
   Widget build(BuildContext context) {

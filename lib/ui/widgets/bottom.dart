@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:snake/entities/direction.dart';
-import 'package:snake/stores/game_store.dart';
-import 'package:snake/ui/widgets/play_button.dart';
-
+import '../../entities/direction.dart';
+import '../../stores/game_store.dart';
 import 'game_button.dart';
+import 'play_button.dart';
 
 class Bottom extends StatelessWidget {
+
+  Bottom({Key? key}): super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final GameStore gameStore = Provider.of<GameStore>(context);
+    final gameStore = Provider.of<GameStore>(context);
     return Container(
       height: 140,
       alignment: Alignment.center,

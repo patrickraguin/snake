@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:snake/stores/game_store.dart';
 
 import '../../constants.dart';
+import '../../stores/game_store.dart';
 
 class Board extends StatelessWidget {
+
+  Board({Key? key}): super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -14,18 +18,14 @@ class Board extends StatelessWidget {
     if(height < width) {
       width = height - (defaultSide * 2.5);
     }
-    return Container(
+    return SizedBox(
         width: width,
         height: height,
         child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 1,
-              crossAxisCount: defaultSide,
-              mainAxisSpacing: 0,
-              crossAxisSpacing: 0),
-          itemBuilder: (BuildContext context, int index) =>
-              _displayCase(context, index),
+              crossAxisCount: defaultSide,),
+          itemBuilder: _displayCase,
           itemCount: defaultSide * defaultSide,
         ));
   }

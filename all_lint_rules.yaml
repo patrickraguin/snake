@@ -86,7 +86,7 @@ linter:
     - non_constant_identifier_names
     - null_check_on_nullable_type_parameter
     - null_closures
-    - omit_local_variable_types
+    #- omit_local_variable_types
     - one_member_abstracts
     - only_throw_errors
     - overridden_fields
@@ -133,13 +133,11 @@ linter:
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
     - provide_deprecation_message
-    - public_member_api_docs
     - recursive_getters
     - sized_box_for_whitespace
     - slash_for_doc_comments
     - sort_child_properties_last
     - sort_constructors_first
-    - sort_pub_dependencies
     - sort_unnamed_constructors_first
     - test_types_in_equals
     - throw_in_finally
